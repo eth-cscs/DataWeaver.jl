@@ -1,0 +1,4 @@
+[deps]
+DataWeaver = "c10392fa-d732-4155-826e-86382f12108d"
+DocExtensions = "cbdad009-89f1-4e05-85a0-06b07b50707d"
+Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
