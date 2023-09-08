@@ -3,6 +3,11 @@ uuid = "c10392fa-d732-4155-826e-86382f12108d"
 authors = ["Maja Gwozdz", "Samuel Omlin"]
 version = "0.0.1"
 
+[deps]
+ADIOS2 = "e0ce9d3b-0dbd-416f-8264-ccca772f60ec"
+MPI = "da04e1cc-30fd-572f-bb4f-1f8673147195"
+Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
+
 [compat]
 julia = "1.6"
 
