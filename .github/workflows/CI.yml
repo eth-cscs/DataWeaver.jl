@@ -24,7 +24,7 @@ jobs:
         os:
           - ubuntu-latest
           - macOS-latest
-          - windows-latest
+          #- windows-latest (ADIOS2.jl does currently not install correctly in windows CI)
         arch:
           - x64
     steps:
