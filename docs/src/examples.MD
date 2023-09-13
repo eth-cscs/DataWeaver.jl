@@ -1,9 +1,9 @@
 # Examples
 
 ```@contents
-Pages = ["examples/memcopyCellArray3D.md"]
+Pages = ["examples/read_test.md"]
 ```
 
 ```@contents
-Pages = ["examples/memcopyCellArray3D_ParallelStencil.md"]
+Pages = ["examples/mpi_diffusion2D.md"]
 ```

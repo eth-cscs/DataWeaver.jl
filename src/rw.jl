@@ -31,7 +31,7 @@ using ADIOS2
 
         global init_state = true          # mark the initialization step
         global vars = []                  # initialize the variable array (used later for reading and writing)
-        global nprocessed = 0            # needed for the reading step
+        global nprocessed = 0             # needed for the reading step
         global reading_now = false        # flag for the reading loop (to avoid race conditions)
     end
 
@@ -92,7 +92,7 @@ using ADIOS2
             global nprocessed = 0
             return false
         end
-        
+
     end
 
     """
