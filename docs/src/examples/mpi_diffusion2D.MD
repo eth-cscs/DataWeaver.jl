@@ -3,4 +3,4 @@
 ```@eval
 Main.mdinclude(joinpath(Main.EXAMPLEROOT, "mpi_diffusion2D.jl"))
 ```
-The corresponding file can be found [here](../../../examples/mpi_diffusion2D.jl).
+The corresponding file can be found [here](../../../assets/examples/mpi_diffusion2D.jl).
