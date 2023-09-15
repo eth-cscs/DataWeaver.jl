@@ -4,12 +4,12 @@ Module DataWeaver
 
 module DataWeaver
 
-export adios2_init, write_setup, write, read_setup, reading, read, finalize_adios,
+export init_data_weaver, write_setup, write, read_setup, reading, read, finalize_data_weaver,
        inspect_variables
 
 let
-    global adios2_init, write_setup, write, read_setup, reading, reading_now, read,
-    finalize_adios, adios, engine, vars, init_state, nprocessed
+    global init_data_weaver, write_setup, write, read_setup, reading, reading_now, read,
+    finalize_data_weaver, adios, engine, vars, init_state, nprocessed
 
     include("rw.jl")
     include("utils.jl")
