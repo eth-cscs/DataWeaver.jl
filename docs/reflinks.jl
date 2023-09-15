@@ -3,4 +3,5 @@ reflinks = Dict(
     "[DataWeaver.jl]"         => "https://github.com/eth-cscs/DataWeaver.jl",
     "[Julia package manager]" => "https://docs.julialang.org/en/v1/stdlib/Pkg/",
     "[Julia REPL]"            => "https://docs.julialang.org/en/v1/stdlib/REPL/",
+    "[MPI.jl]"                => "https://juliaparallel.org/MPI.jl/latest/",
 )
