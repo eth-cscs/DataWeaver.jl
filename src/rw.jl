@@ -4,7 +4,7 @@ using ADIOS2
     Intialize ADIOS2. Supports several configuration options: MPI, serial,
     existing XML config file or a new file with specified parameters.
     """
-    function init_data_weaver(; filename::AbstractString = "", engine_type = "",
+    function adios2_init(; filename::AbstractString = "", engine_type = "",
                          serial = false, comm = nothing)
 
         use_mpi = !isnothing(comm)
@@ -142,7 +142,7 @@ using ADIOS2
     """
     Close the ADIOS2 engine once all steps have been performed.
     """
-    function finalize_data_weaver()
+    function finalize_adios()
 
         if init_state == true
             close(engine)

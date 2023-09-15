@@ -80,7 +80,7 @@ nxy_g_nohalo = [nx_g-2, ny_g-2]
 start        = [coords[1]*nxy_nohalo[1], coords[2]*nxy_nohalo[2]]
 T_nohalo     = zeros(nx-2, ny-2)                                  # Preallocate array for writing temperature
 # (intialize ADIOS2, io, engine and define the variable temperature)
-init_data_weaver(filename = "adios2.xml", comm = comm)                 # Use the configurations defined in "adios2.xml"
+adios2_init(filename = "adios2.xml", comm = comm)                 # Use the configurations defined in "adios2.xml"
 write_setup("temperature" => T, bp_filename = "diffusion2D.bp")   # Define the variable "temperature" and open the file/stream "diffusion2D.bp"
 
 # Time loop
@@ -104,7 +104,7 @@ for it in 1:nt
     update_halo(T, neighbors_x, neighbors_y)                     # Update the halo of T
 end
 
-finalize_data_weaver()
+finalize_adios()
 MPI.Finalize()
 
 @printf("\ntime: %.8f\n", time() - tic)

@@ -12,6 +12,18 @@ help?> DataWeaver
 ```
 
 
+## [`CellArray`](@ref) type and basic constructors
+```@docs
+CellArray
+```
+
+
+## Convenience type aliases and constructors
+#### Index
+* [`DataWeaver.CPUCellArray`](@ref)
+* [`DataWeaver.CuCellArray`](@ref)
+* [`DataWeaver.ROCCellArray`](@ref)
+
 #### Documentation
 ```@autodocs
 Modules = [DataWeaver]
