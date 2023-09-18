@@ -128,8 +128,6 @@ using Plots
             #print("Current step: " * string(current_step(engine)))
         end
 
-        return V
-
     end
 
     """
