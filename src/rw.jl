@@ -1,4 +1,5 @@
 using ADIOS2
+using Plots
 
     """
     Intialize ADIOS2. Supports several configuration options: MPI, serial,
@@ -126,6 +127,12 @@ using ADIOS2
             #print("Variable steps: " * string(steps(var_id)))
             #print("Current step: " * string(current_step(engine)))
         end
+
+        plot_title = "Temperature at step " * string(nprocessed)                   # Plot the temperature
+        display(Plots.contourf(transpose(var_id), title=plot_title, size=(1700,1700),
+                         xtickfontsize=30, ytickfontsize=30,                 # ...
+                         xguidefontsize=30, yguidefontsize=30,
+                         legendfontsize=30, titlefontsize=40))               # ...
 
     end
 
