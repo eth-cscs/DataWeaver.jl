@@ -82,8 +82,9 @@ using ADIOS2
 
     function reading(; timeout = 100.0)
 
-        loop_condition = begin_step(engine, step_mode_read, timeout) != step_status_end_of_stream
+        return ADIOS2.begin_step(engine, step_mode_read, timeout) != step_status_end_of_stream
 
+        """
         if loop_condition
             global reading_now = true
             return true
@@ -92,6 +93,7 @@ using ADIOS2
             global nprocessed = 0
             return false
         end
+        """
 
     end
 
@@ -112,10 +114,10 @@ using ADIOS2
 
         get(engine, var_id, V)
 
-        if reading                                                                  # end the step automatically if loop detected
-            end_step(engine)
-            global nprocessed += 1
-        end
+        #if reading                                                                  # end the step automatically if loop detected
+        end_step(engine)
+        global nprocessed += 1
+        #end
 
         if verbose
             print("Variable: " * string(var))
