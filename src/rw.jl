@@ -40,7 +40,7 @@ using ADIOS2
     """
     function read_setup(bp_filename = "")
 
-        io = ADIOS2.declare_io(adios, "readerIO")
+        global io = ADIOS2.declare_io(adios, "readerIO")
         bp_path = joinpath(pwd(), bp_filename)
         global engine = ADIOS2.open(io, bp_path, mode_read)    # Open the file/stream from the .bp file
 
