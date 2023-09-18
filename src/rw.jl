@@ -129,7 +129,7 @@ using Plots
         end
 
         plot_title = "Temperature at step " * string(nprocessed)                   # Plot the temperature
-        display(Plots.contourf(transpose(var_id), title=plot_title, size=(1700,1700),
+        display(Plots.contourf(transpose(V), title=plot_title, size=(1700,1700),
                          xtickfontsize=30, ytickfontsize=30,                 # ...
                          xguidefontsize=30, yguidefontsize=30,
                          legendfontsize=30, titlefontsize=40))               # ...
