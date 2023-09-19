@@ -1,5 +1,4 @@
 using ADIOS2
-using Plots
 
     """
     Intialize ADIOS2. Supports several configuration options: MPI, serial,
