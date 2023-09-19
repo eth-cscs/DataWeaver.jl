@@ -85,12 +85,12 @@ using Plots
 
         if ADIOS2.begin_step(engine, step_mode_read, timeout) != step_status_end_of_stream
             global reading_now = true
-            return true
         else
             global reading_now = false
             global nprocessed = 0
-            return false
         end
+
+        return ADIOS2.begin_step(engine, step_mode_read, timeout) != step_status_end_of_stream
 
     end
 
