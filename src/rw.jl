@@ -92,8 +92,6 @@ using Plots
             return false
         end
 
-        return false
-
     end
 
     """
