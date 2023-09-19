@@ -85,12 +85,14 @@ using Plots
 
         if ADIOS2.begin_step(engine, step_mode_read, timeout) != step_status_end_of_stream
             global reading_now = true
+            return true
         else
             global reading_now = false
             global nprocessed = 0
+            return false
         end
 
-        return ADIOS2.begin_step(engine, step_mode_read, timeout) != step_status_end_of_stream
+        return false
 
     end
 
@@ -112,8 +114,8 @@ using Plots
         get(engine, var_id, V)
 
         if reading                                                                  # end the step automatically if loop detected
-        end_step(engine)
-        global nprocessed += 1
+            end_step(engine)
+            global nprocessed += 1
         end
 
 
