@@ -83,20 +83,14 @@ using Plots
 
     function reading(; timeout = 100.0)
 
-        loop_condition = ADIOS2.begin_step(engine, step_mode_read, timeout) != step_status_end_of_stream
-
-        print(loop_condition)
-
-        if loop_condition
+        if ADIOS2.begin_step(engine, step_mode_read, timeout) != step_status_end_of_stream
             global reading_now = true
-            return loop_condition
+            return true
         else
             global reading_now = false
             global nprocessed = 0
-            return loop_condition
+            return false
         end
-
-
 
     end
 
