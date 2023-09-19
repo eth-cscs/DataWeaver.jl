@@ -85,16 +85,18 @@ using Plots
 
         loop_condition = ADIOS2.begin_step(engine, step_mode_read, timeout) != step_status_end_of_stream
 
+        print(loop_condition)
+
         if loop_condition
             global reading_now = true
-            return true
+            return loop_condition
         else
             global reading_now = false
             global nprocessed = 0
-            return false
+            return loop_condition
         end
 
-        return loop_condition
+
 
     end
 
