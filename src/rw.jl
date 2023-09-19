@@ -121,7 +121,7 @@ using Plots
             print("Variable: " * string(var))
             print("Step: " * string(nprocessed))
             print("Variable steps: " * string(steps(var_id)))
-            print("Current step: " * string(current_step(engine)))
+            #print("Current step: " * string(current_step(engine)))
         end
 
     end
