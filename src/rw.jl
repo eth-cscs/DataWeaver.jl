@@ -113,7 +113,7 @@ using Plots
 
         get(engine, var_id, V)
 
-        if reading                                                                  # end the step automatically if loop detected
+        if reading_now                                                              # end the step automatically if loop detected
             end_step(engine)
             global nprocessed += 1
         end
