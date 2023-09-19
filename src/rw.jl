@@ -83,9 +83,8 @@ using Plots
 
     function reading(; timeout = 100.0)
 
-        return ADIOS2.begin_step(engine, step_mode_read, timeout) != step_status_end_of_stream
+        loop_condition = ADIOS2.begin_step(engine, step_mode_read, timeout) != step_status_end_of_stream
 
-        """
         if loop_condition
             global reading_now = true
             return true
@@ -94,7 +93,8 @@ using Plots
             global nprocessed = 0
             return false
         end
-        """
+
+        return loop_condition
 
     end
 
@@ -115,10 +115,10 @@ using Plots
 
         get(engine, var_id, V)
 
-        #if reading                                                                  # end the step automatically if loop detected
+        if reading                                                                  # end the step automatically if loop detected
         end_step(engine)
         global nprocessed += 1
-        #end
+        end
 
 
         if verbose
