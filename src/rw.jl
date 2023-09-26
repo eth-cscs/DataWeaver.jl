@@ -40,7 +40,7 @@ using ADIOS2
     """
     function read_setup(bp_filename = "")
 
-        io = ADIOS2.declare_io(adios, "readerIO")
+        global io = ADIOS2.declare_io(adios, "readerIO")
         bp_path = joinpath(pwd(), bp_filename)
         global engine = ADIOS2.open(io, bp_path, mode_read)    # Open the file/stream from the .bp file
 
@@ -82,9 +82,7 @@ using ADIOS2
 
     function reading(; timeout = 100.0)
 
-        loop_condition = begin_step(engine, step_mode_read, timeout) != step_status_end_of_stream
-
-        if loop_condition
+        if ADIOS2.begin_step(engine, step_mode_read, timeout) != step_status_end_of_stream
             global reading_now = true
             return true
         else
@@ -112,16 +110,17 @@ using ADIOS2
 
         get(engine, var_id, V)
 
-        if reading                                                                  # end the step automatically if loop detected
+        if reading_now                                                              # end the step automatically if loop detected
             end_step(engine)
             global nprocessed += 1
         end
 
+
         if verbose
-            print("Variable: " * string(var))
-            print("Step: " * string(nprocessed))
-            print("Variable steps: " * string(steps(var_iq)))
-            print("Current step: " * string(current_step(engine)))
+            println("Variable: " * string(var))
+            println("Step: " * string(nprocessed))
+            println("Variable steps: " * string(steps(var_id)))
+            #print("Current step: " * string(current_step(engine)))
         end
 
     end
